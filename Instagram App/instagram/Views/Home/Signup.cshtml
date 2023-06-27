@@ -1,0 +1,47 @@
+﻿@{
+    ViewBag.Title = "Signup";
+}
+<br />
+<h3>Signup</h3>
+<br />
+
+<form method="post" action="/Home/Signup" enctype = "multipart/form-data" >
+    <table>
+     <tr> 
+        <td> <label>Frist Name</label></td> 
+        <td><input type="text" name="Fname" /></td>
+     </tr>
+    <tr>
+        <td><labe>Last Name</labe></td> 
+        <td><input type="text" name="Lname" /></td>
+    </tr>
+    <tr>
+        <td><label>Photo</label></td> 
+        <td><input type="file" name="photo" /></td>
+    </tr>
+    <tr>
+        <td><label>Phone</label></td> 
+        <td><input type="text" name="Phone" /></td>
+    </tr>
+    <tr>
+        <td> <label>Username</label></td>
+        <td> <input type="text" name="username" /></td>
+    </tr>
+    <tr>
+        <td> <label>Password</label></td>
+        <td> <input type="password" name="password" /> </td>
+    </tr>
+    <tr>
+        <td> <label>Repassword</label></td>
+        <td> <input type="password" name="repassword" /></td>
+    </tr>
+   
+    </table>
+    <input type="submit" value="Send" />
+</form>
+
+<br />
+
+<div class="col-sm-5">
+    <a href="/Home/Index"><input type="button" value="Login" /></a>
+</div>

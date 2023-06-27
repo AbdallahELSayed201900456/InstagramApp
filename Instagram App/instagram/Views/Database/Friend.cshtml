@@ -1,0 +1,39 @@
+﻿@model IEnumerable<instgaram.Models.friend>
+
+@{
+    ViewBag.Title = "Friend";
+}
+
+<h2>Friend</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.sender1_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.resever1_id)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.sender1_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.resever1_id)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

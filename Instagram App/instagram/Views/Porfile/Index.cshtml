@@ -1,0 +1,52 @@
+﻿@model instgaram.Models.User
+
+@{
+    ViewBag.Title = "Index";
+}
+<style>
+
+    .post {
+        margin: 30px;
+        padding: 30px;
+        border-style: solid;
+        border-color: red;
+    }
+</style>
+
+<img src="@Model.Photo" height="150px" />
+
+<h3>@Model.FName @Model.LName</h3>
+<a href="/Porfile/addpost"><h3> add post </h3> </a>
+
+<br />
+
+<a href="/Porfile/Edit/@Model.Id"><h3> Edit Profile </h3> </a>
+
+<br />
+
+<a href="/Home/Index"><h3> Logout </h3> </a>
+
+<br />
+
+@{
+    foreach (var item in Model.posts)
+    {
+        <div class="post">
+            <center>
+                <img src="@item.photo" height="150px" />
+            </center>
+            @{foreach (var i in item.Comments)
+                {
+                    <h3>@i.commenttext</h3>
+                }
+
+            }
+            <br />
+            <input type="text" id="@item.Id" />
+            <input type="button" onclick="sendcomment('@item.Id','@Session["Userid"]')" value="send" />
+        </div>
+    }
+}
+
+
+<script src="~/Scripts/Comment.js"></script>

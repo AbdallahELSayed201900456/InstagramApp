@@ -1,0 +1,22 @@
+﻿@model IList<instgaram.Models.User>
+
+@{
+    ViewBag.Title = "allpersons";
+}
+
+<form method="post" action="/porfile/getpersons">
+    <label>name</label><input type="text" name="name" />
+    <br />
+    <input type="submit" value="send" />
+</form>
+
+
+
+@{
+    foreach (var item in Model)
+    {
+        <img src="@item.Photo" height="150px" />
+        <h3>@item.FName @item.LName</h3>
+        <h4><a href="/Porfile/addfriend/@item.Id">Add friend</a></h4>
+    }
+}

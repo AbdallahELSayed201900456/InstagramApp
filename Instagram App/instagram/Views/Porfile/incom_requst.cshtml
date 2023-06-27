@@ -1,0 +1,16 @@
+﻿@model IList<instgaram.Models.friend_re>
+
+@{
+    ViewBag.Title = "incom_requst";
+}
+@{
+    foreach (var item in Model)
+    {
+        <img src="@item.sender.Photo" height="150px" />
+        <h3><a href="/Porfile/ShowProfile/@item.sender.Id"> @item.sender.FName @item.sender.LName </a></h3>
+
+        <h5><a href="/porfile/Accapt">Accept Friend </a></h5>
+    }
+
+
+}
